@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Servioo</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Servioo</h1>
+
+<div class="search-box">
+
+<input id="searchInput" placeholder="plombier lyon">
+
+<button onclick="search()">Rechercher</button>
+
+</div>
+
+</header>
+
+
+<section class="categories">
+
+<button onclick="quickSearch('plombier lyon')">Plombier</button>
+
+<button onclick="quickSearch('coiffeur lyon')">Coiffeur</button>
+
+<button onclick="quickSearch('électricien lyon')">Électricien</button>
+
+<button onclick="quickSearch('serrurier lyon')">Serrurier</button>
+
+</section>
+
+
+<section id="results"></section>
+
+
+<div id="panel">
+
+<button onclick="closePanel()">✖</button>
+
+<h2 id="name"></h2>
+
+<p id="city"></p>
+
+<div id="phone"></div>
+
+<div id="email"></div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
