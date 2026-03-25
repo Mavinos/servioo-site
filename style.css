@@ -1,91 +1,196 @@
 body {
 
-background:#070f1e;
-font-family:Arial;
+background: linear-gradient(160deg,#020617,#020b1f);
+
 color:white;
+
+font-family: Inter;
+
 margin:0;
 
 }
 
-header {
 
-text-align:center;
-padding:40px;
 
-}
+.navbar {
 
-.search-box {
+display:flex;
 
-margin-top:20px;
+justify-content:space-between;
 
-}
+padding:20px 60px;
 
-input {
-
-padding:15px;
-width:300px;
-background:#0d1b34;
-border:none;
-border-radius:10px;
-color:white;
+align-items:center;
 
 }
 
-button {
 
-padding:15px;
-margin-left:10px;
-background:#1f6bff;
-border:none;
-border-radius:10px;
-color:white;
+
+.logo {
+
+font-size:28px;
+
+font-weight:700;
+
+color:#4cc9ff;
+
+}
+
+
+
+nav button {
+
+margin-left:15px;
+
+background:transparent;
+
+border:1px solid #1e3a8a;
+
+color:#ccc;
+
+padding:8px 14px;
+
+border-radius:8px;
+
 cursor:pointer;
 
 }
 
-.categories {
 
-display:flex;
-justify-content:center;
-gap:10px;
-margin-top:20px;
+
+.hero {
+
+text-align:center;
+
+margin-top:120px;
+
+}
+
+
+
+.hero h1 {
+
+font-size:48px;
 
 }
 
-#results {
 
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:40px;
+
+.hero span {
+
+color:#38bdf8;
 
 }
+
+
+
+.searchbox {
+
+margin-top:40px;
+
+}
+
+
+
+.searchbox input {
+
+width:400px;
+
+padding:14px;
+
+border-radius:12px;
+
+border:none;
+
+background:#0f172a;
+
+color:white;
+
+font-size:16px;
+
+}
+
+
+
+.searchbox button {
+
+padding:14px 20px;
+
+margin-left:10px;
+
+background:#2563eb;
+
+border:none;
+
+border-radius:12px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+
+.quick button {
+
+margin:10px;
+
+background:#1e3a8a;
+
+border:none;
+
+padding:10px 20px;
+
+border-radius:10px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+
+.results {
+
+margin:80px auto;
+
+max-width:800px;
+
+}
+
+
 
 .card {
 
-background:#0d1b34;
-padding:20px;
-border-radius:15px;
-cursor:pointer;
+background:#020617;
+
+border:1px solid #1e3a8a;
+
+padding:25px;
+
+margin-bottom:25px;
+
+border-radius:16px;
+
+transition:.3s;
 
 }
 
-#panel {
 
-position:fixed;
-right:-400px;
-top:0;
-height:100%;
-width:400px;
-background:#09142a;
-padding:30px;
-transition:0.4s;
+
+.card:hover {
+
+transform:translateY(-6px);
 
 }
 
-#panel.active {
 
-right:0;
+
+.card h3 {
+
+color:#38bdf8;
 
 }
 
