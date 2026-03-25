@@ -1,73 +1,129 @@
-async function search(){
+const artisans = {
 
-let query=document.getElementById("searchInput").value
+plombier: [
 
-let response=await fetch(
+{
 
-"http://localhost:8000/search?q="+query
+name:"Atelier Plomberie",
 
-)
+phone:"06 12 34 56 78",
 
-let data=await response.json()
+email:"contact@atelierplomberie.fr"
 
-display(data)
+},
+
+{
+
+name:"SOS Dépannage Express",
+
+phone:"06 98 44 22 11",
+
+email:"sosdepannage@mail.fr"
+
+}
+
+],
+
+coiffeur:[
+
+{
+
+name:"Salon Prestige",
+
+phone:"06 55 66 77 88",
+
+email:"salonprestige@mail.fr"
+
+}
+
+],
+
+electricien:[
+
+{
+
+name:"ElecRapide",
+
+phone:"07 77 66 55 44",
+
+email:"elecrapide@mail.fr"
+
+}
+
+],
+
+serrurier:[
+
+{
+
+name:"SOS Serrurerie",
+
+phone:"06 99 22 33 44",
+
+email:"sosserrurerie@mail.fr"
+
+}
+
+]
 
 }
 
 
-function quickSearch(text){
 
-document.getElementById("searchInput").value=text
+function search(){
 
-search()
+let value = document.getElementById("searchInput").value.toLowerCase()
+
+displayResults(value)
 
 }
 
 
-function display(list){
 
-let container=document.getElementById("results")
+function searchCategory(category){
+
+document.getElementById("searchInput").value = category
+
+displayResults(category)
+
+}
+
+
+
+function displayResults(category){
+
+let container = document.getElementById("results")
 
 container.innerHTML=""
 
-list.forEach(company=>{
+
+
+if(!artisans[category]){
+
+container.innerHTML="<p>Aucun artisan trouvé.</p>"
+
+return
+
+}
+
+
+
+artisans[category].forEach(a=>{
 
 container.innerHTML+=`
 
-<div class="card" onclick="openPanel('${company.name}','${company.city}','${company.phone}','${company.email}')">
+<div class="card">
 
-<h3>${company.name}</h3>
+<h3>${a.name}</h3>
 
-<p>${company.city}</p>
+<p>📞 ${a.phone}</p>
 
-⭐ ${company.rating ?? "4.7"}
+<p>✉️ ${a.email}</p>
 
 </div>
 
 `
 
 })
-
-}
-
-
-function openPanel(name,city,phone,email){
-
-document.getElementById("panel").classList.add("active")
-
-document.getElementById("name").innerText=name
-
-document.getElementById("city").innerText=city
-
-document.getElementById("phone").innerText="📞 "+phone
-
-document.getElementById("email").innerText="✉ "+email
-
-}
-
-
-function closePanel(){
-
-document.getElementById("panel").classList.remove("active")
 
 }
